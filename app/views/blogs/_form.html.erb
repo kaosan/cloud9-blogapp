@@ -17,6 +17,6 @@
     <%= form.label :content %>
     <%= form.text_field :content %>
   </div>
-  <%= form.submit %>
+  <%= form.submit "投稿", class:'botton'%>
 <% end %>
-<%= link_to "ブログ詳細画面に戻る", blogs_path %>
+<%= link_to "ブログ詳細画面に戻る", blogs_path, class:'back_blog' %>

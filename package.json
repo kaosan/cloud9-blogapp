@@ -1,5 +1,7 @@
 {
   "name": "blogapp",
   "private": true,
-  "dependencies": {}
+  "dependencies": {
+    "bootstrap": "3"
+  }
 }
