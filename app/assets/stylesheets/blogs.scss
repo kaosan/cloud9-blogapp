@@ -17,6 +17,7 @@ body{
   background-color: #7a4171;
   height: 50px;
   font-size: 1.5rem;
+  width: 100%;
 }
 
 .top_menu li{
@@ -77,6 +78,11 @@ h3{
   vertical-align: middle;
   display: table-cell;
 }
+
+#error_explanation{
+  color:red;
+}
+
 .btn-primary{
   background-color: #895b8a
 }
