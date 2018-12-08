@@ -13,19 +13,19 @@
 <% end %>
 
 <%= form_with(model: @user, local: true) do |f| %>
-<div class="users">
+<div class="sin_up">
   <%= f.label :名前 %>
   <%= f.text_field :name %>
 </div>
-<div class="users">
+<div class="sin_up">
   <%= f.label :メールアドレス %>
   <%= f.email_field :email %>
 </div>
-<div class="users">
+<div class="sin_up">
   <%= f.label :パスワード %>
   <%= f.password_field :password %>
 </div>
-<div class="users">
+<div class="sin_up">
   <%= f.label :同じパスワードを入力 %>
   <%= f.password_field :password_confirmation %>
 </div>
