@@ -14,3 +14,10 @@
  *= require_tree .
  *= require_self
  */
+ .sessions{
+   color: #bc64a4;
+ }
+
+ .users{
+   color: #bc64a4;
+ }
