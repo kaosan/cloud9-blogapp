@@ -5,6 +5,7 @@ module SessionsHelper
 
   def logged_in?
     current_user.present?
+    flash[:notice] = 'ログインしてください'
   end
 
 

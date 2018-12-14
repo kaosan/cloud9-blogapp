@@ -1,5 +1,6 @@
 class SessionsController < ApplicationController
-  skip_before_action :require_sing_in!, only: [:new, :edit, :show, :destroy]
+  before_action :logged_in?, only: [:show, :edit, :new, :destroy]
+
   def new
   end
 
