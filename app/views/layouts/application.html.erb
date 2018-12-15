@@ -21,7 +21,7 @@
 
                 <% if logged_in? %>
                   <li>
-                    <a><%= link_to "ブログ一覧", blogs_path(current_user.id) %></a>
+                    <a><%= link_to "ブログ一覧", blogs_path %></a>
                   </li>
                   <li>
                     <a><%= link_to '投稿画面へ', new_blog_path %></a>

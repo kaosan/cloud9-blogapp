@@ -1,5 +1,5 @@
 class SessionsController < ApplicationController
-  before_action :logged_in?, only: [:show, :edit, :new, :destroy]
+  
 
   def new
   end

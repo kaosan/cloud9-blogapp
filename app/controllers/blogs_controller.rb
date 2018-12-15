@@ -1,6 +1,6 @@
 class BlogsController < ApplicationController
   before_action :set_blog, only: [:show, :edit, :update, :destro]
-  before_action :logged_in?
+  before_action :logged_in?, only: [:new, :edit, :show, :destroy]
 
 
   def top
@@ -66,6 +66,13 @@ class BlogsController < ApplicationController
     @blog = Blog.find(params[:id])
   end
 
+  def logged_in?
+    if current_user.present?
+    else
+      flash[:notice] = "ログインしてください"
+      redirect_to new_session_path
+    end
+  end
 
 
 end
