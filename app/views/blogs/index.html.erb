@@ -6,12 +6,20 @@
       <% @blogs.each do |blog| %>
         <div class="col-xs-12 col-md-6">
 
+          <p>投稿者:<%= blog.user.name %></p>
           <p>タイトル：<%= blog.title %></p>
           <p>内容：<%= blog.content %></p>
 
           <span><%= link_to '詳細', blog_path(blog.id), class:'btn outline btn-primary' %></span>
-          <span><%= link_to '編集', edit_blog_path(blog.id), data: {confirm: '本当に編集しますか？'}, class: 'btn outline btn-info' %></span>
-          <span><%= link_to '削除', blog_path(blog.id),method: :delete, data: {confirm: '本当に削除しますか？'}, class:'btn outline btn-dander' %></span>
+
+          <% if logged_in? %>
+            <% if blog.user_id == current_user.id %>
+              <span><%= link_to '編集', edit_blog_path(blog.id), data: {confirm: '本当に編集しますか？'}, class: 'btn outline btn-info' %></span>
+              <span><%= link_to '削除', blog_path(blog.id),method: :delete, data: {confirm: '本当に削除しますか？'}, class:'btn outline btn-dander' %></span>
+
+            <% end %>
+          <% end %>
+
         </div>
       <% end %>
     </div>

@@ -5,8 +5,8 @@
       <%= form_with(model: @blog, url: blogs_path, local: true) do |form| %>
       <%= form.hidden_field :title %>
       <%= form.hidden_field :content %>
-
-      <p>タイトル:<%=@blog.title %></p>
+      <p>投稿者:<%= @user.name %></p>
+      <p>タイトル: <%= @blog.title %></p>
       <p>本文:<%=@blog.content %></p>
       <%= form.submit "登録する", class:'botton' %>
     <% end %>

@@ -1,2 +1,11 @@
 <h1><%= @user.name %>のブログ</h1>
-<p>ログインしました。</p>
+<h2>お気に入りしたブログ</h2>
+<table>
+  <% @user.favorite_blogs.each do |blog| %>
+  <tr>
+    <th>投稿者:<%= blog.user.name %></th>
+    <th>タイトル:<%= blog.title %></th>
+    <th>内容:<%= blog.content %></th>
+    </tr>
+    <% end %>
+    </table>
