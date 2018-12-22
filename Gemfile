@@ -58,7 +58,3 @@ gem 'bcrypt', '3.1.11'
 group :development, :test do
   gem 'dotenv-rails'
 end
-
-gem 'pry-rails'
-gem 'better_errors'
-gem 'binding_of_caller'
