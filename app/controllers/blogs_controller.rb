@@ -6,7 +6,7 @@ class BlogsController < ApplicationController
    end
 
   def index
-    @blogs = Blog.all  
+    @blogs = Blog.all
   end
 
   def new
@@ -22,6 +22,8 @@ class BlogsController < ApplicationController
     @blog.user_id = current_user.id
     if @blog.save
       redirect_to blogs_path, notice: 'ブログを作成しました'
+      ContactMailer.contact_mail(@contact).deliver
+       redirect_to @contact, notice: '確認メールを送信しました。'
     else
       render 'new'
     end
@@ -68,8 +70,7 @@ class BlogsController < ApplicationController
   end
 
   def logged_in?
-    if current_user.present?
-    else
+    unless current_user.present?
       flash[:notice] = 'ログインしてください'
       redirect_to new_session_path
     end

@@ -1,4 +1,5 @@
 Rails.application.routes.draw do
+  resources :contacts
   root to: 'blogs#top'
 
   resources :sessions, only: [:new, :create, :destroy]
@@ -12,5 +13,6 @@ Rails.application.routes.draw do
 
   resources :favorites, only: [:create, :destroy]
 
-  # For details on the DSL available within this file, see http://guides.rubyonrails.org/routing.html
+  mount LetterOpenerWeb::Engine, at: "/letter_opener" if Rails.env.development?
+
 end
