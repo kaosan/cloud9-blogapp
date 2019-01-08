@@ -4,9 +4,9 @@
       <h3>以下の内容で送信しますか</h3>
       <%= form_with(model: @blog, url: blogs_path, local: true) do |form| %>
       <%= form.hidden_field :title %>
-      <%= image_tag(@blog.image.url) %>
-      <%= form.hidden_filed :image_cache %>
       <%= form.hidden_field :content %>
+      <%= image_tag(@blog.image.url) %>
+      <%= form.hidden_field :image_cache %>
       <p>投稿者:<%= @user.name %></p>
       <p>タイトル: <%= @blog.title %></p>
       <p>本文:<%= @blog.content %></p>
