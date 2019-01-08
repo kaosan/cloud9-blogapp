@@ -1,4 +1,6 @@
+<%= image_tag @user.image.url %>
 <h1><%= @user.name %>のブログ</h1>
+<p><%= notice %></p>
 <h3>お気に入りしたブログ</h3>
 <table>
   <% @user.favorite_blogs.each do |blog| %>
@@ -9,3 +11,5 @@
     </tr>
     <% end %>
     </table>
+<br>
+<%= link_to "プロフィールの編集", edit_user %>

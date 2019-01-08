@@ -4,15 +4,18 @@
       <h3>以下の内容で送信しますか</h3>
       <%= form_with(model: @blog, url: blogs_path, local: true) do |form| %>
       <%= form.hidden_field :title %>
+      <%= image_tag(@blog.image.url) %>
+      <%= form.hidden_filed :image_cache %>
       <%= form.hidden_field :content %>
       <p>投稿者:<%= @user.name %></p>
       <p>タイトル: <%= @blog.title %></p>
-      <p>本文:<%=@blog.content %></p>
+      <p>本文:<%= @blog.content %></p>
       <%= form.submit "登録する", class:'botton' %>
     <% end %>
 
     <%= form_with(model: @blog, url: new_blog_path, local: true, method: 'get') do |form| %>
     <%= form.hidden_field :title %>
+    <%= form.hidden_field :image_cache %>
     <%= form.hidden_field :content %>
     <%= form.submit "戻る", name: 'back', class:'botton' %>
   <% end %>

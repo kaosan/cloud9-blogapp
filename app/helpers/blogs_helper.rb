@@ -7,5 +7,4 @@ module BlogsHelper
     end
   end
 
-
   end
