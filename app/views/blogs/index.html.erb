@@ -9,6 +9,10 @@
           <p>投稿者:<%= blog.user.name %></p>
           <p>タイトル：<%= blog.title %></p>
           <p>内容：<%= blog.content %></p>
+          <p>
+            <%= image_tag blog.image %>
+            </p>
+
 
           <span><%= link_to '詳細', blog_path(blog.id), class:'btn outline btn-primary' %></span>
 

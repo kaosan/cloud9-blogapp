@@ -1,4 +1,4 @@
-<%= image_tag @user.image.url %>
+<%= image_tag user.icon %>
 <h1><%= @user.name %>のブログ</h1>
 <p><%= notice %></p>
 <h3>お気に入りしたブログ</h3>
@@ -8,8 +8,10 @@
     <th>投稿者:<%= blog.user.name %></th>
     <th>タイトル:<%= blog.title %></th>
     <th>内容:<%= blog.content %></th>
+    <th>
+      <%= image_tag blog.image %>
+      </th>
     </tr>
     <% end %>
     </table>
 <br>
-<%= link_to "プロフィールの編集", edit_user %>
