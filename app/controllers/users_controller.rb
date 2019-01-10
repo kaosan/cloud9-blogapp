@@ -7,13 +7,11 @@ class UsersController < ApplicationController
 
   def create
     @user = User.new(user_params)
-    respond_to do |format|
     if @user.save
       redirect_to user_path(@user.id)
     else
       render 'new'
     end
-  end
   end
 
   def show
