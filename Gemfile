@@ -69,4 +69,3 @@ gem 'mini_magick'
 gem 'letter_opener_web'
 
 gem 'carrierwave'
-gem 'rmagick'
