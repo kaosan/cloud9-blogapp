@@ -1,9 +1,9 @@
 class BlogsController < ApplicationController
-  before_action :set_blog, only: [:show, :edit, :update, :destro]
+  before_action :set_blog, only: [:show, :edit, :update, :destroy]
   before_action :logged_in?, only: [:new, :edit, :show, :destroy]
 
   def top
-   end
+  end
 
   def index
     @blogs = Blog.all
@@ -30,13 +30,13 @@ class BlogsController < ApplicationController
 
   def show
     @favorite = current_user.favorites.find_by(blog_id: @blog.id)
-   end
+  end
 
   def edit
     unless @blog.user_id == current_user.id
       redirect_to blogs_path, notice: "権限がありません"
     end
-   end
+  end
 
   def update
     if @blog.update(blog_params)
