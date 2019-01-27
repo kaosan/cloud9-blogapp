@@ -10,3 +10,13 @@ h3{
 th{
   color: #9d5b8b;
 }
+
+.img-responsive{
+  display: block;
+  height: auto;
+  max-width: 100%;
+}
+
+.container{
+  overflow: scroll;
+}

@@ -1,3 +1,4 @@
+<div class="container">
 <%= image_tag @user.icon %>
 <h1><%= @user.name %>のブログ</h1>
 <p><%= notice %></p>
@@ -9,9 +10,9 @@
     <th>タイトル:<%= blog.title %></th>
     <th>内容:<%= blog.content %></th>
     <th>
-      <%= image_tag blog.image, :size =>'480x480' %>
+      <%= image_tag blog.image, :class =>'img-responsive center-block' %>
       </th>
     </tr>
     <% end %>
     </table>
-<br>
+</div>

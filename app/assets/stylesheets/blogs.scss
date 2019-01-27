@@ -166,3 +166,13 @@ h3{
 .sin_up{
   color: #bc64a4;
 }
+
+.image-responsive{
+  display: block;
+  height: auto;
+  max-width: 100%;
+}
+
+.container{
+  overflow: scroll;
+}
