@@ -5,7 +5,7 @@
       <%= form_with(model: @blog, url: blogs_path, local: true) do |form| %>
       <%= form.hidden_field :title %>
       <%= form.hidden_field :content %>
-      <%= image_tag(@blog.image.url) if @blog.image.url %>
+      <%= image_tag(@blog.image.url, class: 'img-responsive center-block') if @blog.image.url %>
       <%= form.hidden_field :image_cache %>
       <p>投稿者:<%= @user.name %></p>
       <p>タイトル: <%= @blog.title %></p>
